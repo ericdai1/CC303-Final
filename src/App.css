@@ -12,3 +12,12 @@
   text-align: center;
   font-weight: bold;
 }
+
+.checklistTitle {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  font-size: 26px;
+}

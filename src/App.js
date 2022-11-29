@@ -12,6 +12,11 @@ function App() {
           MythologyFeed
         </span>
       </div>
+
+      <div className="checklistTitle">
+        Check off all the statements that apply to you:
+      </div>
+
     </div>
   )
 }
