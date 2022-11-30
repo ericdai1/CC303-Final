@@ -1,10 +1,20 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState} from 'react';
 import "./App.css"
-
-const LOCAL_STORAGE_KEY = 'todoApp.todos'
+import ChecklistBox from "./ChecklistBox"
 
 function App() {
+  const questions = [
+    {text: "Do you like dogs?", clicked: false},
+    {text: "Do you like cats?", clicked: false}
+  ]
+
+  const [stateQuestions, setStateQuestions] = useState(questions)
+
+  function render() {
+    console.log(questions)
+    
+  }
+
   return (
     <div>
       <div className="titlePage">
@@ -17,6 +27,19 @@ function App() {
         Check off all the statements that apply to you:
       </div>
 
+      <div className="checklistContainer">
+        {
+          stateQuestions.map((question, i) => {
+            return <ChecklistBox key={i} isClicked={question.clicked} text={question.text}
+                    onClick={() => {
+                      let newQuestions = [...stateQuestions];
+                      newQuestions[i].clicked = !newQuestions[i].clicked;
+                      setStateQuestions(newQuestions);
+                    }}
+            />
+          })
+        }
+      </div>
     </div>
   )
 }
