@@ -21,3 +21,12 @@
   margin-top: 40px;
   font-size: 26px;
 }
+
+.checklistContainer {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.checklistBox {
+  margin-top: 12px;
+}
