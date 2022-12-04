@@ -44,8 +44,8 @@ function App() {
 
   function MonsterOutput() {
     return (
-      <div>
-        
+      <div className="monsterOutput">
+        <img></img>
       </div>
     )
   }
