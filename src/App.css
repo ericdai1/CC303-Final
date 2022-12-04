@@ -30,3 +30,24 @@
 .checklistBox {
   margin-top: 12px;
 }
+
+.submitContainer {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #0f65ef;
+  color: white;
+  border: none;
+
+  font-size: 16px;
+  padding: 10px 15px 10px 15px;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  background-color: #093c8f;
+}
