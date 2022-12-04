@@ -2,11 +2,14 @@ import React, { useState} from 'react';
 import "./App.css"
 import ChecklistBox from "./ChecklistBox"
 
+import Cerberus from "./Monsters/Cerberus.jfif"
+
 function App() {
   const questions = [
     {text: "You like dogs", clicked: false},
     {text: "You like cats", clicked: false},
     {text: "You like snakes", clicked: false},
+    {text: "You like lions", clicked: false},
     {text: "You like farm animals", clicked: false},
     {text: "You consider yourself intelligent, in terms of book smarts and IQ", clicked: false},
     {text: "You consider yourself physically strong", clicked: false},
@@ -19,7 +22,7 @@ function App() {
     {text: "You are physically attractive", clicked: false},
     {text: "You are tall", clicked: false},
     {text: "You are older than 30", clicked: false},
-    {text: "You frequently fly on airplains", clicked: false},
+    {text: "You frequently fly on airplanes", clicked: false},
     {text: "You have pranked or tricked someone", clicked: false},
     {text: "You have been to a desert", clicked: false},
     {text: "You have had a close call with death", clicked: false}
@@ -45,17 +48,21 @@ function App() {
   function MonsterOutput() {
     return (
       <div className="monsterOutput">
-        <img></img>
+        <img src={Cerberus} />
       </div>
     )
   }
 
   return (
-    <div>
+    <div className="container">
       <div className="titlePage">
         <span className="titleText">
           MythologyFeed
         </span>
+      </div>
+
+      <div className="quizDescription">
+        Take our quiz to find out which mythology monster is most like you!
       </div>
 
       <div className="checklistTitle">
@@ -77,7 +84,7 @@ function App() {
       </div>
 
       {
-        isQuizSubmitted ? null : <SubmitButton />
+        isQuizSubmitted ? <MonsterOutput /> : <SubmitButton />
       }
     </div>
   )
