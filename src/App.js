@@ -5,11 +5,34 @@ import ChecklistBox from "./ChecklistBox"
 import Cerberus from "./Monsters/Cerberus.jfif"
 
 function App() {
+  const monsterWeights = { "Cerberus": 0, "Medusa": 0, "Sphinx": 0, "Siren": 0, "Harpy": 0, "Hydra": 0, "Fury": 0,
+      "Chimera": 0, "Griffin": 0, "Cyclops": 0, "Minotaur": 0, "Centaur": 0, "Pegasus": 0}
+  const questionWeights = [
+    { "Cerberus": 150 },
+    { "Sphinx": 50, "Chimera": 50, "Griffin": 50 },
+    { "Medusa": 75, "Chimera": 75 },
+    { "Pegasus": 50, "Chimera": 50, "Centaur": 50 },
+    { "Siren": 50, "Harpy": 50, "Fury": 50 },
+    { "Minotaur": 25, "Griffin": 25, "Cerberus": 25, "Cyclops": 25, "Sphinx": 25, "Hydra": 25 },
+    { "Harpy": 75, "Griffin": 75 },
+    { "Cyclops": 150 },
+    { "Cerberus": 75, "Hydra": 75 },
+    { "Fury": 50, "Pegasus": 50, "Cerberus": 50 },
+    { "Cerberus": 50, "Fury": 50, "Medusa": 50 },
+    { "Centaur": 50, "Minotaur": 50, "Cerberus": 50 },
+    { "Siren": 75, "Pegasus": 75 },
+    { "Cyclops": 50, "Hydra": 50, "Cerberus": 50 },
+    { "Fury": 75, "Medusa": 75 },
+    { "Harpy": 50, "Griffin": 50, "Pegasus": 50 },
+    { "Siren": 50, "Medusa": 50, "Fury": 50 },
+    { "Sphinx": 150 },
+    { "Cerberus": 50, "Fury": 50, "Minotaur": 50 },
+  ]
+
   const questions = [
     {text: "You like dogs", clicked: false},
     {text: "You like cats", clicked: false},
     {text: "You like snakes", clicked: false},
-    {text: "You like lions", clicked: false},
     {text: "You like farm animals", clicked: false},
     {text: "You consider yourself intelligent, in terms of book smarts and IQ", clicked: false},
     {text: "You consider yourself physically strong", clicked: false},
@@ -30,6 +53,7 @@ function App() {
 
   const [stateQuestions, setStateQuestions] = useState(questions)
   const [isQuizSubmitted, setIsQuizSubmitted] = useState(false)
+  // const [monsterWeights, setWeights] = useState(weights);
 
   function SubmitButton() {
     return (
@@ -43,6 +67,17 @@ function App() {
         </button>
       </div>
     )
+  }
+
+  function assignWeights() {
+    for (let i = 0; i < stateQuestions.length; i++) {
+      if (stateQuestions.clicked) {
+        weightsToAdd = questionWeights[i];
+        for (const key of Object.keys(weightsToAdd)) {
+          monsterWeights[key] += weightsToAdd[key];
+        }
+      }
+    }
   }
 
   function MonsterOutput() {
