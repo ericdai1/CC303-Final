@@ -60,7 +60,7 @@ function App() {
     { "Cerberus": 100 },
     { "Sphinx": 50, "Chimera": 50, "Griffin": 50 },
     { "Medusa": 100, "Chimera": 75 },
-    { "Pegasus": 50, "Chimera": 50, "Centaur": 55 },
+    { "Pegasus": 50, "Chimera": 50, "Centaur": 50 },
     { "Siren": 50, "Harpy": 50, "Fury": 50 },
     { "Minotaur": 25, "Griffin": 25, "Cerberus": 25, "Cyclops": 25, "Sphinx": 25, "Hydra": 25},
     { "Harpy": 75, "Griffin": 75 },
@@ -75,7 +75,7 @@ function App() {
     { "Harpy": 50, "Griffin": 50, "Pegasus": 50 },
     { "Siren": 55, "Medusa": 50, "Fury": 50 },
     { "Sphinx": 100 },
-    { "Cerberus": 55, "Fury": 50, "Minotaur": 50 },
+    { "Cerberus": 50, "Fury": 50, "Minotaur": 50 },
   ]
 
   const questions = [
@@ -109,7 +109,7 @@ function App() {
       <div className="submitContainer"> 
         <button className="submitButton" onClick={() => {
           setIsQuizSubmitted(true)
-        }}>
+        }} disabled={stateQuestions.every((elem) => !elem.clicked)}>
           <span className="submitText">
             Find out your monster!
           </span>
@@ -138,8 +138,8 @@ function App() {
     console.log(mostCommonMonster);
     return (
       <div className="monsterOutput">
-        <img src={images[mostCommonMonster]} />
-        <div>
+        <img className="monsterImage" src={images[mostCommonMonster]} />
+        <div className="monsterDescription">
           {
             descriptions[mostCommonMonster]
           }
@@ -173,6 +173,7 @@ function App() {
                       newQuestions[i].clicked = !newQuestions[i].clicked;
                       setStateQuestions(newQuestions);
                     }}
+                    disabled={isQuizSubmitted}
             />
           })
         }

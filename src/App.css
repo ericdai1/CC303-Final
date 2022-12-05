@@ -49,9 +49,13 @@
   padding: 10px 15px 10px 15px;
 }
 
-.submitButton:hover {
+.submitButton:hover:enabled {
   cursor: pointer;
   background-color: #093c8f;
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
 }
 
 .monsterOutput {
@@ -62,7 +66,14 @@
   align-items: center;
 }
 
+.monsterImage {
+  max-height: 300px;
+  max-width: 300px;
+}
+
 .monsterDescription {
+  text-align: center;
+  font-weight: bold;
   margin-top: 16px;
   font-size: 16px;
 }

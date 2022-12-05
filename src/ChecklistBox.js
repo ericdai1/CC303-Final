@@ -10,11 +10,11 @@ function RadioButton({isClicked}) {
     );
 }
 
-export default function ChecklistBox({isClicked, text, onClick}) {
+export default function ChecklistBox({isClicked, text, onClick, disabled}) {
     return (
-      <button className="checklistBox" onClick={onClick}>
+      <button className="checklistBox" onClick={onClick} disabled={disabled}>
         <RadioButton isClicked={isClicked}/>
-        <span className="checklistText">
+        <span className={isClicked ? "checklistTextClicked" : "checklistText"}>
             {text}
         </span>
       </button>
