@@ -102,7 +102,6 @@ function App() {
 
   const [stateQuestions, setStateQuestions] = useState(questions)
   const [isQuizSubmitted, setIsQuizSubmitted] = useState(false)
-  // const [monsterWeights, setWeights] = useState(weights);
 
   function SubmitButton() {
     return (
