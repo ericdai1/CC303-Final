@@ -3,6 +3,18 @@ import "./App.css"
 import ChecklistBox from "./ChecklistBox"
 
 import Cerberus from "./Monsters/Cerberus.jfif"
+import Medusa from "./Monsters/Medusa.jpg"
+import Sphinx from "./Monsters/Sphinx.png"
+import Siren from "./Monsters/Siren.webp"
+import Harpy from "./Monsters/Harpy.jpg"
+import Hydra from "./Monsters/Hydra.jpg"
+import Fury from "./Monsters/Fury.jfif"
+import Chimera from "./Monsters/Chimera.jfif"
+import Griffin from "./Monsters/Griffin.webp"
+import Cyclops from "./Monsters/Cyclops.webp"
+import Minotaur from "./Monsters/Minotaur.jpg"
+import Centaur from "./Monsters/Centaur.png"
+import Pegasus from "./Monsters/Pegasus.jfif"
 
 function App() {
   const monsterWeights = { "Cerberus": 0, "Medusa": 0, "Sphinx": 0, "Siren": 0, "Harpy": 0, "Hydra": 0, "Fury": 0,
@@ -72,7 +84,7 @@ function App() {
   function assignWeights() {
     for (let i = 0; i < stateQuestions.length; i++) {
       if (stateQuestions.clicked) {
-        weightsToAdd = questionWeights[i];
+        let weightsToAdd = questionWeights[i];
         for (const key of Object.keys(weightsToAdd)) {
           monsterWeights[key] += weightsToAdd[key];
         }
@@ -81,6 +93,7 @@ function App() {
   }
 
   function MonsterOutput() {
+    assignWeights();
     return (
       <div className="monsterOutput">
         <img src={Cerberus} />
