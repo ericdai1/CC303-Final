@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/cc303-final/static/css/main.4e8004b1.css",
+    "main.js": "/cc303-final/static/js/main.f51368cb.js",
+    "static/media/Griffin.webp": "/cc303-final/static/media/Griffin.029fc4d16cdc52269f43.webp",
+    "static/media/Sphinx.png": "/cc303-final/static/media/Sphinx.ef2fceec35110125beea.png",
+    "static/media/Hydra.jpg": "/cc303-final/static/media/Hydra.ffd3a2325f7fc1a30920.jpg",
+    "static/media/Centaur.png": "/cc303-final/static/media/Centaur.69ceb90bb95337874292.png",
+    "static/media/Cyclops.webp": "/cc303-final/static/media/Cyclops.10acbba96090ca894767.webp",
+    "static/media/Medusa.jpg": "/cc303-final/static/media/Medusa.b20ed2ff3ab4fe771d8d.jpg",
+    "static/media/Harpy.jpg": "/cc303-final/static/media/Harpy.aa29f8718d7d1e4d3ac6.jpg",
+    "static/media/Siren.webp": "/cc303-final/static/media/Siren.43ace68f2f67effd71d4.webp",
+    "static/media/Minotaur.jpg": "/cc303-final/static/media/Minotaur.2927835b6166049abc12.jpg",
+    "static/media/Pegasus.jfif": "/cc303-final/static/media/Pegasus.7e54364237cf188a3f0e.jfif",
+    "static/media/Cerberus.jfif": "/cc303-final/static/media/Cerberus.6f8dbcf2c604573b6826.jfif",
+    "static/media/Fury.jfif": "/cc303-final/static/media/Fury.7cc2b803e1bc18238555.jfif",
+    "static/media/Chimera.jfif": "/cc303-final/static/media/Chimera.c61e3963b00a8c023d3c.jfif",
+    "index.html": "/cc303-final/index.html",
+    "main.4e8004b1.css.map": "/cc303-final/static/css/main.4e8004b1.css.map",
+    "main.f51368cb.js.map": "/cc303-final/static/js/main.f51368cb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e8004b1.css",
+    "static/js/main.f51368cb.js"
+  ]
+}
