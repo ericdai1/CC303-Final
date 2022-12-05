@@ -57,15 +57,15 @@ function App() {
   }
   
   const questionWeights = [
-    { "Cerberus": 150 },
+    { "Cerberus": 100 },
     { "Sphinx": 50, "Chimera": 50, "Griffin": 50 },
-    { "Medusa": 75, "Chimera": 75 },
-    { "Pegasus": 50, "Chimera": 50, "Centaur": 50 },
+    { "Medusa": 100, "Chimera": 75 },
+    { "Pegasus": 50, "Chimera": 50, "Centaur": 55 },
     { "Siren": 50, "Harpy": 50, "Fury": 50 },
-    { "Minotaur": 25, "Griffin": 25, "Cerberus": 25, "Cyclops": 25, "Sphinx": 25, "Hydra": 25 },
+    { "Minotaur": 25, "Griffin": 25, "Cerberus": 25, "Cyclops": 25, "Sphinx": 25, "Hydra": 25},
     { "Harpy": 75, "Griffin": 75 },
-    { "Cyclops": 150 },
-    { "Cerberus": 75, "Hydra": 75 },
+    { "Cyclops": 100 },
+    { "Cerberus": 50, "Fury": 50, "Hydra": 50 },
     { "Fury": 50, "Pegasus": 50, "Cerberus": 50 },
     { "Cerberus": 50, "Fury": 50, "Medusa": 50 },
     { "Centaur": 50, "Minotaur": 50, "Cerberus": 50 },
@@ -73,9 +73,9 @@ function App() {
     { "Cyclops": 50, "Hydra": 50, "Cerberus": 50 },
     { "Fury": 75, "Medusa": 75 },
     { "Harpy": 50, "Griffin": 50, "Pegasus": 50 },
-    { "Siren": 50, "Medusa": 50, "Fury": 50 },
-    { "Sphinx": 150 },
-    { "Cerberus": 50, "Fury": 50, "Minotaur": 50 },
+    { "Siren": 55, "Medusa": 50, "Fury": 50 },
+    { "Sphinx": 100 },
+    { "Cerberus": 55, "Fury": 50, "Minotaur": 50 },
   ]
 
   const questions = [
@@ -120,10 +120,12 @@ function App() {
 
   function getMonster() {
     for (let i = 0; i < stateQuestions.length; i++) {
-      if (stateQuestions.clicked) {
+      if (stateQuestions[i].clicked) {
+        console.log("Clicked");
         let weightsToAdd = questionWeights[i];
         for (const key of Object.keys(weightsToAdd)) {
           monsterWeights[key] += weightsToAdd[key];
+          console.log(monsterWeights[key]);
         }
       }
     }
@@ -133,9 +135,15 @@ function App() {
 
   function MonsterOutput() {
     let mostCommonMonster = getMonster();
+    console.log(mostCommonMonster);
     return (
       <div className="monsterOutput">
-        <img src={Cerberus} />
+        <img src={images[mostCommonMonster]} />
+        <div>
+          {
+            descriptions[mostCommonMonster]
+          }
+        </div>
       </div>
     )
   }
